@@ -40,7 +40,7 @@ class ShadowUserAgent(object):
         while 1:
             try:
                 update_tries += 1
-                r = requests.get(url=self.URL)
+                r = requests.get(url=self.URL, verify = False)
                 data = json.loads(r.content.decode('utf-8'))
             except Exception:
                 self.logger.error(r.content.decode('utf-8'))
